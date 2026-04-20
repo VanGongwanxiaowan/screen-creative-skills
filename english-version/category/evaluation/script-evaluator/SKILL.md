@@ -1,38 +1,15 @@
 ---
 name: script-evaluator
-description: Evaluate film and TV scripts from three dimensions: ideological, artistic, and entertainment value. Suitable for script development quality assessment, modification direction determination, pre-project approval review
-category: evaluation
-version: 2.1.0
-last_updated: 2026-01-11
+description: "Evaluate film and TV scripts across ideological, artistic, and entertainment value dimensions, producing structured scoring reports with follow-up recommendations. Use when assessing script development quality, determining modification direction, reviewing scripts before project approval, or benchmarking screenwriter capabilities."
+allowed-tools: "Read, Write"
 license: MIT
 compatibility: Claude Code 1.0+
-maintainer: Gong Fan
-allowed-tools:
-  - Read
-  - Write
-model: opus
-changelog:
-  - version: 2.1.0
-    date: 2026-01-11
-    changes:
-      - type: improved
-        content: Optimized description field to be more concise and comply with imperative language specifications
-      - type: added
-        content: Added allowed-tools (Read, Write) and model (opus) fields
-  - version: 2.0.0
-    date: 2026-01-11
-    changes:
-      - type: breaking
-        content: Refactored according to Agent Skills official specifications
-      - type: improved
-        content: Optimized description, using imperative language, simplified main content
-      - type: added
-        content: Added license and compatibility optional fields
-  - version: 1.0.0
-    date: 2026-01-10
-    changes:
-      - type: added
-        content: Initial version
+metadata:
+  category: evaluation
+  version: 2.1.0
+  last_updated: 2026-01-11
+  maintainer: Gong Fan
+  model: opus
 ---
 
 # Film and TV Script Evaluation Expert
@@ -41,40 +18,36 @@ changelog:
 
 Deeply read film and TV scripts, conduct professional evaluation and scoring from three dimensions: ideological, artistic, and entertainment value.
 
-## Use Cases
-
-- Conduct quality assessment during script development.
-- Determine script modification direction.
-- Review scripts before film and TV project approval.
-- Evaluate and improve screenwriter capabilities.
-
 ## Evaluation Dimensions
 
-### 1. Ideological Value
-Evaluate whether script's ideological value belongs to "positive," "neutral," or "negative."
+### 1. Ideological Value (Positive / Neutral / Negative)
 
-- **Values**: Analyze whether script has correct value orientation.
-- **Social Significance**: Analyze whether script has social significance that reflects reality.
+| Sub-dimension | Criteria |
+|---------------|----------|
+| Values | Does the script promote a constructive value orientation? |
+| Social Significance | Does the story reflect meaningful social reality? |
 
-### 2. Artistic Value
-Evaluate whether script's artistic value belongs to "excellent," "acceptable," or "lacking."
+### 2. Artistic Value (Excellent / Acceptable / Lacking)
 
-- **Detail Portrayal**: Evaluate detail portrayal of script content.
-- **Creativity Presentation**: Evaluate creativity presentation in script.
-- **Narrative Logic**: Evaluate script's narrative logic.
-- **Narrative Techniques**: Evaluate narrative techniques used in script.
-- **Narrative Rhythm**: Evaluate script's narrative rhythm.
-- **Dialogue Expression**: Evaluate character dialogue in script.
+| Sub-dimension | Criteria |
+|---------------|----------|
+| Detail Portrayal | Specificity and vividness of scenes, actions, and objects |
+| Creativity | Originality of premise, structure, or storytelling device |
+| Narrative Logic | Cause-and-effect consistency across plot events |
+| Narrative Techniques | Effective use of foreshadowing, flashback, parallel storylines |
+| Narrative Rhythm | Pacing balance — tension build-up vs. release across acts |
+| Dialogue Expression | Character voice distinctiveness, subtext, and economy of words |
 
-### 3. Entertainment Value
-Combined with scoring standards, score overall entertainment value of script content.
+### 3. Entertainment Value (scored 1.0–10.0)
 
-- **Audience Base**: Evaluate whether script content matches target audience.
-- **Topicality**: Evaluate script's themes and topics.
-- **Genre Style**: Evaluate script's genre style.
-- **Character Shaping**: Evaluate script's character shaping.
-- **Character Relationships**: Evaluate script's character relationships.
-- **Plot Devices**: Evaluate script's plot devices.
+| Sub-dimension | Criteria |
+|---------------|----------|
+| Audience Base | Alignment with target demographic expectations and genre conventions |
+| Topicality | Relevance to current cultural trends or evergreen themes |
+| Genre Style | Consistency and effective use of genre tropes |
+| Character Shaping | Depth, arc, and memorability of characters |
+| Character Relationships | Dynamic tension and evolution of interpersonal bonds |
+| Plot Devices | Effectiveness of hooks, reversals, and climax construction |
 
 ## Scoring Standards
 
@@ -83,14 +56,14 @@ Combined with scoring standards, score overall entertainment value of script con
 - **7.5-7.9**: Qualified, average competitiveness.
 - **7.4 and below**: Poor, almost no competitiveness.
 
-## Core Steps
+## Workflow
 
-1. **Deep Reading**: Deeply read script, form independent understanding.
-2. **Ideological Evaluation**: Evaluate script's values and social significance.
-3. **Artistic Evaluation**: Evaluate each artistic dimension of script.
-4. **Entertainment Evaluation**: Evaluate each entertainment dimension of script.
-5. **Overall Evaluation**: Combine three dimensions to form overall evaluation.
-6. **Provide Recommendations**: Provide recommendations for proceeding or modification.
+1. **Read** the full script; note genre, target audience, and stated creative intent.
+2. **Score Ideological Value** — classify as positive/neutral/negative with evidence from the text.
+3. **Score Artistic Value** — rate each of the six sub-dimensions (1.0–10.0) with one-sentence justification per score.
+4. **Score Entertainment Value** — rate each of the six sub-dimensions (1.0–10.0) with one-sentence justification per score.
+5. **Validate consistency** — confirm sub-dimension scores align with the overall assessment; flag contradictions.
+6. **Produce Overall Score and Recommendations** — weighted average of artistic and entertainment scores; provide specific, actionable next steps (proceed / revise with targeted notes).
 
 ## Input Requirements
 
@@ -147,12 +120,3 @@ See `{baseDir}/references/` directory for more documentation:
 - `guide.md` - Complete guide to film and TV script evaluation, including evaluation framework, scoring standards, evaluation process, and precautions
 - `examples.md` - Detailed evaluation examples
 
----
-
-## Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 2.1.0 | 2026-01-11 | Optimized description field, added allowed-tools and model fields, adjusted main content language style, added constraints, and directed to references/examples.md |
-| 2.0.0 | 2026-01-11 | Refactored according to official specifications |
-| 1.0.0 | 2026-01-10 | Initial version |

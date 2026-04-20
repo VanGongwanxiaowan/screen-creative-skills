@@ -1,72 +1,35 @@
 ---
 name: story-five-elements
-description: Comprehensively analyze story five elements: genre type, story summary, character biographies, character relationships, major plot points. Suitable for deep story analysis, script adaptation preparation, story development documentation
-category: story-analysis
-version: 2.1.0
-last_updated: 2026-01-11
+description: "Analyze five core story elements — genre type, story summary, character biographies, character relationships, and major plot points — producing a structured comprehensive report with optional mind map. Use when preparing for script adaptation, conducting deep story analysis, creating story development documentation, or evaluating overall story quality and market potential."
 license: MIT
 compatibility: Claude Code 1.0+
-maintainer: Gong Fan
-allowed-tools: []
-model: opus
-changelog:
-  - version: 2.1.0
-    date: 2026-01-11
-    changes:
-      - type: improved
-        content: Optimized description field to be more concise and comply with imperative language specifications
-      - type: changed
-        content: Changed model to opus
-      - type: improved
-        content: Optimized descriptions of functionality, use cases, core steps, input requirements, and output format to comply with imperative language specifications
-      - type: added
-        content: Added constraints, examples, and detailed documentation sections
-  - version: 2.0.0
-    date: 2026-01-11
-    changes:
-      - type: breaking
-        content: Refactored according to Agent Skills official specifications
-      - type: improved
-        content: Optimized description, using imperative language, simplified main content
-      - type: added
-        content: Added license and compatibility optional fields
-      - type: added
-        content: Added references/ structure to store detailed examples
-  - version: 1.0.0
-    date: 2026-01-10
-    changes:
-      - type: added
-        content: Initial version
+metadata:
+  category: story-analysis
+  version: 2.1.0
+  last_updated: 2026-01-11
+  maintainer: Gong Fan
+  model: opus
 ---
 
 # Story Five Elements Analysis Expert
 
-## Functionality
-
-Analyze five core elements of stories: genre type and creative element extraction, story summary, character biographies, character relationships, major plot points.
-
-## Use Cases
-
-- Comprehensively and deeply analyze story text
-- Provide complete five elements analysis for script adaptation
-- Create story development documentation
-- Evaluate overall quality and market potential of stories
-
 ## Five Core Elements
 
-1. **Genre Type and Creative Element Extraction**: Analyze story genres, extract creative elements
-2. **Story Summary**: Generate complete story summary
-3. **Character Biographies**: Generate detailed biographies for main characters
-4. **Character Relationships**: Analyze relationship networks between characters
-5. **Major Plot Points**: Organize and analyze main plot points
+| Element | What to Produce |
+|---------|----------------|
+| **Genre & Creative Elements** | Primary/secondary genres, unique creative hooks, tone, and style markers |
+| **Story Summary** | 300–500 word narrative covering setup, escalation, climax, and resolution |
+| **Character Biographies** | For each major character: background, motivation, personality traits, arc |
+| **Character Relationships** | Relationship types, power dynamics, evolution across the story |
+| **Major Plot Points** | Key turning points mapped to three-act structure (setup, confrontation, resolution) |
 
-## Core Steps
+## Workflow
 
-1. **Text Preprocessing**: Intelligently truncate and split long text, ensure analysis quality and efficiency
-2. **Parallel Analysis**: Efficiently process text segments, call professional analysis modules
-3. **Five Elements Analysis**: Simultaneously conduct professional analysis in five dimensions: genre type, story summary, character biographies, character relationships, major plot points
-4. **Result Integration**: Integrate all analysis results, generate structured comprehensive analysis report
-5. **Mind Map Generation**: Optionally generate visualized mind map, intuitively display five elements relationships
+1. **Preprocess** — if text exceeds context limits, split at chapter or scene boundaries with 200-word overlap to preserve continuity.
+2. **Analyze each element** — for each of the five elements above, extract evidence directly from the text. Quote or paraphrase key passages as supporting evidence.
+3. **Cross-reference** — verify character biographies align with relationship descriptions; confirm plot points match the story summary's narrative arc.
+4. **Compile report** — assemble findings in the output format below.
+5. **Generate mind map** (optional) — produce a text-based mind map linking the five elements.
 
 ## Input Requirements
 
@@ -104,18 +67,8 @@ V. Major Plot Points
 [Main plot points arranged by development stage]
 ```
 
-## Detailed Documentation
+## References
 
-See `{baseDir}/references/` directory for more documentation:
-- `examples.md` - Detailed analysis examples (urban emotion, ancient court intrigue, suspense mystery, etc.)
-- `guide.md` - Complete five elements analysis guide and techniques
-
----
-
-## Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 2.1.0 | 2026-01-11 | Optimized description field to be more concise and comply with imperative language specifications; changed model to opus; optimized descriptions of functionality, use cases, core steps, input requirements, and output format to comply with imperative language specifications; added constraints, examples, and detailed documentation sections. |
-| 2.0.0 | 2026-01-11 | Refactored according to official specifications, added references structure |
-| 1.0.0 | 2026-01-10 | Initial version |
+See `{baseDir}/references/` for detailed worked examples and analysis techniques:
+- `examples.md` — full analysis examples across genres (urban emotion, court intrigue, suspense mystery)
+- `guide.md` — complete five-elements analysis guide
