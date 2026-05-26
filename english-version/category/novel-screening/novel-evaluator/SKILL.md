@@ -1,86 +1,47 @@
 ---
 name: novel-evaluator
-description: Rigorously and meticulously evaluate and score story text, analyzing quality from market potential, innovation attributes, and content highlights dimensions. Suitable for novel initial screening, multi-dimensional evaluation scoring
-category: novel-screening
-version: 2.1.0
-last_updated: 2026-01-11
+description: "Evaluate and score story text across market potential, innovation attributes, and content highlights dimensions, producing structured scoring reports with development recommendations. Use when conducting novel initial screening, assessing IP adaptation potential, scoring stories for multi-dimensional quality comparison, or guiding story creation and optimization direction."
+allowed-tools: "Read"
 license: MIT
 compatibility: Claude Code 1.0+
-maintainer: Gong Fan
-allowed-tools:
-  - Read
-model: opus
-changelog:
-  - version: 2.2.0
-    date: 2026-01-11
-    changes:
-      - type: improved
-        content: Added references/guide.md citation, improved detailed documentation section
-  - version: 2.1.0
-    date: 2026-01-11
-    changes:
-      - type: improved
-        content: Optimized description field to be more concise and comply with imperative language standards
-      - type: added
-        content: Added allowed-tools (Read) and model (opus) fields
-      - type: improved
-        content: Optimized descriptions for functionality, usage scenarios, evaluation dimensions, scoring standards, and core steps to comply with imperative language standards
-      - type: added
-        content: Added constraints and examples sections
-  - version: 2.0.0
-    date: 2026-01-11
-    changes:
-      - type: breaking
-        content: Restructured according to Agent Skills official specifications
-      - type: improved
-        content: Optimized description, used imperative language, streamlined main content
-      - type: added
-        content: Added license and compatibility optional fields
-  - version: 1.0.0
-    date: 2026-01-10
-    changes:
-      - type: added
-        content: Initial version
+metadata:
+  category: novel-screening
+  version: 2.1.0
+  last_updated: 2026-01-11
+  maintainer: Gong Fan
+  model: opus
 ---
 
 # Senior Story Evaluation Expert (Novel Edition)
 
-## Functionality
-
-Conduct rigorous and meticulous evaluation and scoring of story text, analyzing story quality from multiple dimensions including market potential, innovation attributes, and content highlights.
-
-## Usage Scenarios
-
-- Conduct novel initial screening to quickly determine work value
-- Conduct multi-dimensional evaluation scoring of story text
-- Provide judgment basis for IP adaptation potential
-- Guide story creation and optimization directions
-
 ## Evaluation Dimensions
 
-### 1. Market Potential
-Judge story's performance potential in the market.
+### 1. Market Potential (scored 1.0–10.0)
 
-- **Audience Fit**: Judge whether story aligns with target audience
-- **Discussion Heat**: Judge whether story content can generate significant discussion热度
-- **Scarcity**: Analyze whether story has sufficient uniqueness
-- **Performance Data**: Analyze story's market prospects
+| Sub-dimension | Criteria |
+|---------------|----------|
+| Audience Fit | Does the story match a defined target demographic? How large is that audience? |
+| Discussion Heat | Does the content contain shareable moments, controversy, or social commentary that drives organic buzz? |
+| Scarcity | Is the premise sufficiently unique within the genre, or does it feel derivative? |
+| Performance Data | Based on comparable works, what are the market prospects? |
 
-### 2. Innovation Attributes
-Judge whether story possesses innovation.
+### 2. Innovation Attributes (scored 1.0–10.0)
 
-- **Core Selection**: Judge whether story's core selection is fresh and unique
-- **Story Concept**: Judge whether story's concept is prominent and distinctive
-- **Story Design**: Analyze from perspectives of theme, characters, worldview, and plot whether story design has originality
+| Sub-dimension | Criteria |
+|---------------|----------|
+| Core Selection | Is the central topic or setting fresh and underexplored? |
+| Story Concept | Is the high-concept hook distinctive and easy to pitch in one sentence? |
+| Story Design | Does the combination of theme, characters, worldview, and plot show originality? |
 
-### 3. Content Highlights
-Judge from story content level whether it possesses strong watchability.
+### 3. Content Highlights (scored 1.0–10.0)
 
-- **Theme Concept**: Analyze whether theme concept is clear and definite
-- **Story Situation**: Judge whether story situation has tension and dramatic quality
-- **Character Design**: Judge whether character design is novel and distinctive
-- **Character Relationships**: Judge whether character relationships are outstanding and distinctive
-- **Plot Segments**: Judge whether plot segments have dramatic tension
+| Sub-dimension | Criteria |
+|---------------|----------|
+| Theme Concept | Is the thematic intent clear and consistently expressed? |
+| Story Situation | Does the core situation generate sustained tension and dramatic stakes? |
+| Character Design | Are characters multi-dimensional with clear motivations and distinct voices? |
+| Character Relationships | Do relationships create meaningful conflict and emotional resonance? |
+| Plot Segments | Do individual plot beats deliver hooks, reversals, and satisfying payoffs? |
 
 ## Scoring Standards
 
@@ -89,11 +50,13 @@ Judge from story content level whether it possesses strong watchability.
 - **7.5-7.9**: Qualified, average competitiveness
 - **7.4 and below**: Poor, almost no competitiveness
 
-## Core Steps
+## Workflow
 
-1. **Deep Reading**: Deep read story text to form independent understanding
-2. **Dimension Scoring**: Conduct rigorous and meticulous analysis and scoring of story according to evaluation dimensions
-3. **Overall Evaluation**: Form overall evaluation and score, provide recommendation on whether to continue development
+1. **Read** the full story text; note genre, length, and any stated creative intent.
+2. **Score each sub-dimension** (1.0–10.0) with a one-sentence justification citing specific text evidence.
+3. **Validate consistency** — check that sub-dimension scores align with each other (e.g., strong character design should correlate with strong character relationships).
+4. **Compute overall score** — weighted average across all three dimensions; flag any outlier sub-dimensions.
+5. **Produce recommendations** — specific, actionable development guidance: proceed / revise with targeted improvement areas.
 
 ## Input Requirements
 
@@ -141,12 +104,3 @@ See `{baseDir}/references/` directory for more documentation:
 - `guide.md` - Complete evaluation guide and framework explanation
 - `examples.md` - More scenario examples
 
----
-
-## Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 2.1.0 | 2026-01-11 | Optimized description field; added allowed-tools (Read) and model (opus) fields; optimized descriptions for functionality, usage scenarios, evaluation dimensions, scoring standards, and core steps; added constraints and examples sections |
-| 2.0.0 | 2026-01-11 | Restructured according to official specifications |
-| 1.0.0 | 2026-01-10 | Initial version |

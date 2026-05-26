@@ -1,70 +1,44 @@
 ---
 name: drama-workflow
-description: Coordinate plot point dramatic function analysis process, manage text preprocessing, parallel analysis, result integration. Suitable for plot point and dramatic function analysis of long texts, scenarios requiring structured analysis reports
-category: workflow
-version: 2.1.0
-last_updated: 2026-01-11
+description: "Orchestrate the full plot-point dramatic function analysis pipeline — text preprocessing, parallel segment analysis, result integration, and report generation — for long-form story content. Use when analyzing plot points and dramatic functions in long texts, producing structured dramatic analysis reports, or coordinating multi-step story analysis workflows."
+allowed-tools: "Read"
 license: MIT
 compatibility: Claude Code 1.0+
-maintainer: Gong Fan
-allowed-tools:
-  - Read
-model: opus
-changelog:
-  - version: 2.1.0
-    date: 2026-01-11
-    changes:
-      - type: improved
-        content: Optimized description field to be more concise and comply with imperative language specifications
-      - type: changed
-        content: Changed model to opus
-      - type: improved
-        content: Optimized descriptions of functionality, use cases, core steps, input requirements, and output format to comply with imperative language specifications
-      - type: added
-        content: Added constraints, examples, and detailed documentation sections
-  - version: 2.0.0
-    date: 2026-01-11
-    changes:
-      - type: breaking
-        content: Refactored according to Agent Skills official specifications
-      - type: improved
-        content: Optimized description, using imperative language, simplified main content
-      - type: added
-        content: Added license and compatibility optional fields
-      - type: added
-        content: Added allowed-tools (Read) and model fields
-  - version: 1.0.0
-    date: 2026-01-10
-    changes:
-      - type: added
-        content: Initial version
+metadata:
+  category: workflow
+  version: 2.1.0
+  last_updated: 2026-01-11
+  maintainer: Gong Fan
+  model: opus
 ---
 
 # Plot Point Dramatic Function Analysis Workflow Orchestrator
 
-## Functionality
+## Workflow
 
-Coordinate entire plot point dramatic function analysis process, manage text preprocessing, parallel analysis, result integration, and report generation.
+### Step 1: Text Preprocessing
+- Split input text at natural scene or chapter boundaries.
+- Target segment size: 2,000–4,000 words with ~200-word overlap between adjacent segments to preserve context continuity.
+- **Checkpoint**: verify every paragraph is covered by at least one segment (no gaps).
 
-## Use Cases
+### Step 2: Parallel Segment Analysis
+For each segment, identify:
+- **Plot points** — actions or events that change the direction of the story (turning points, revelations, confrontations).
+- **Dramatic function** of each plot point — classify as: exposition, rising action, climax, falling action, or resolution.
+- Quote or paraphrase the specific text passage supporting each identification.
 
-- Conduct plot point and dramatic function analysis on long story texts.
-- Need high-quality, professional dramatic analysis reports.
-- Need to obtain structured analysis results.
+### Step 3: Result Integration
+- Merge plot points from all segments in chronological order.
+- Deduplicate plot points that span segment boundaries (same event appearing in overlapping regions).
+- **Checkpoint**: confirm the merged list covers the full story arc from opening to ending.
 
-## Workflow Steps
+### Step 4: Dramatic Structure Analysis
+- Map the merged plot points onto a dramatic arc (tension curve).
+- Identify structural patterns: three-act structure, rising/falling tension, parallel storylines.
+- Note any structural weaknesses (missing climax, unresolved threads, pacing imbalances).
 
-1. **Text Preprocessing**: Truncate and split long text to ensure text is suitable for subsequent analysis.
-2. **Parallel Analysis**: Perform plot point analysis on text segments to improve analysis efficiency.
-3. **Result Integration**: Merge and optimize analysis results to ensure result consistency.
-4. **Report Generation**: Generate final comprehensive analysis report.
-
-## Orchestration Principles
-
-- Ensure correct input-output transmission.
-- Manage context isolation between agents.
-- Optimize parallel processing performance.
-- Guarantee completeness and accuracy of analysis results.
+### Step 5: Report Generation
+Assemble findings into the output format below. Include professional insights from a screenwriter perspective.
 
 ## Input Requirements
 
@@ -106,20 +80,10 @@ IV. Professional Insights
 
 ## Constraints
 
-- Input text length must meet segmentation processing requirements.
-- Ensure independence and accuracy of each plot point analysis.
-- Final report must have clear logic and definite conclusions.
+- Minimum input length: text must be long enough to meaningfully split (typically >4,000 words).
+- Each plot point must cite or paraphrase supporting text — no unsupported claims.
+- Final report must cover the complete story arc with no gaps between segments.
 
-## Examples
+## References
 
-Please refer to `{baseDir}/references/examples.md` for detailed workflow examples. This file contains plot point dramatic function analysis reports for different text types such as long novels, scripts, etc.
-
----
-
-## Version History
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 2.1.0 | 2026-01-11 | Optimized description field, added allowed-tools and model fields, adjusted main content language style, added constraints, and directed to references/examples.md |
-| 2.0.0 | 2026-01-11 | Refactored according to official specifications |
-| 1.0.0 | 2026-01-10 | Initial version |
+See `{baseDir}/references/examples.md` for worked examples of plot-point dramatic function analysis reports across different text types (long novels, scripts).
